@@ -1,6 +1,10 @@
-# Social Meok - Unified Social Inbox
+# Social Meok | Unified Social Inbox
 
-This is a Next.js application replicating the Social Meok dashboard.
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fparthshinge%2FUnified-Social-Inbox)
+
+A premium, dark-themed social inbox dashboard replicating the "Social Meok" interface. Built with Next.js 15, Tailwind CSS v4, and integrated with Farcaster data via Neynar.
+
+![Dashboard Preview](./public/dashboard-preview.png)
 
 ## Getting Started
 
