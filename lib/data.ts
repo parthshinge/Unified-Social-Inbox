@@ -5,6 +5,7 @@ export async function fetchInboxData(): Promise<Cast[]> {
     const apiKey = process.env.NEYNAR_API_KEY;
 
     if (apiKey) {
+        // 1. Priority: Neynar API (Best Experience)
         try {
             const response = await fetch(
                 "https://api.neynar.com/v2/farcaster/feed/trending?limit=10",
@@ -37,12 +38,34 @@ export async function fetchInboxData(): Promise<Cast[]> {
         }
     }
 
-    // Fallback: Use NodeRPC Public Hub (Real Farcaster Data)
-    // Note: Hubs return protobufs usually, but some have HTTP APIs.
-    // Using a simpler public indexer if available or reverting to mock if strict hub parsing isn't feasible in this lightweight demo.
-    // For this demo, we will simulate "Real Chain Data" using a free API that returns recent casts if possible.
-    // Actually, let's use a known public endpoint or keep the mock with a clearer "Real Data" instructions.
-    // Given the constraints of public Hub APIs (proto/binary), we will stick to the robust mock but add REAL price data below.
+    // 2. Fallback: Public Farcaster Hub (NodeRPC) - No API Key Needed
+    // We fetch casts for a specific FID (e.g., Vitalik: 5650, or default to a high-activity user)
+    // Since "trending" isn't a simple endpoint on Hubs, we fetch recent casts from a known active user.
+    try {
+        const HUB_URL = "https://hub.pinata.cloud/v1/castsByFid?fid=5650&pageSize=10&reverse=true"; // Vitalik's FID
+        const response = await fetch(HUB_URL, { next: { revalidate: 60 } });
+
+        if (response.ok) {
+            const data = await response.json();
+            return data.messages.map((msg: any) => {
+                const body = msg.data.castAddBody;
+                return {
+                    hash: msg.hash,
+                    author: {
+                        username: "vitalik.eth", // Hardcoded for this endpoint as Hubs don't return profile data inline
+                        display_name: "Vitalik Buterin",
+                        pfp_url: "https://i.imgur.com/3_p0fW5.png", // Generic Vitalik PFP
+                    },
+                    text: body.text,
+                    timestamp: new Date(msg.data.timestamp * 1000 + 1609459200000).toISOString(), // Farcaster Epoch (Jan 1, 2021)
+                    platform: "farcaster",
+                    type: "Following",
+                };
+            });
+        }
+    } catch (error) {
+        console.warn("Public Hub API failed, reverting to mock data.", error);
+    }
 
     return MOCK_CASTS;
 }
