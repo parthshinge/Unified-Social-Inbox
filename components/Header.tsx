@@ -35,7 +35,7 @@ export function Header() {
                     </button>
                     <div className="flex items-center gap-3 cursor-pointer">
                         <div className="text-right hidden sm:block">
-                            <div className="text-sm font-medium text-white">Kim Efraim</div>
+                            <div className="text-sm font-medium text-white">Parth Shinge</div>
                             <div className="text-xs text-blue-500">Admin</div>
                         </div>
                         <div className="w-9 h-9 rounded-full bg-gradient-to-r from-pink-500 to-rose-500 border-2 border-[var(--background)] shadow-lg" />
