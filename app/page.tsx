@@ -6,7 +6,7 @@ import { fetchInboxData, fetchMetrics } from "@/lib/data";
 import { formatDistanceToNow } from "date-fns";
 
 export default async function Home() {
-  const metrics = fetchMetrics();
+  const metrics = await fetchMetrics();
   const inboxItems = await fetchInboxData();
 
   // Helper to format time (simple approximation or use date-fns if installed)
