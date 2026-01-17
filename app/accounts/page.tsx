@@ -24,7 +24,7 @@ export default function AccountsPage() {
                     {clientAccounts.map((account) => (
                         <div key={account.name} className="glass-card p-6 rounded-xl space-y-4 hover:border-blue-500/50 transition-colors group">
                             <div className="flex items-start justify-between">
-                                <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${account.color} flex items-center justify-center text-white font-bold text-lg shadow-lg`}>
+                                <div className={`w-12 h-12 rounded-xl bg-linear-to-br ${account.color} flex items-center justify-center text-white font-bold text-lg shadow-lg`}>
                                     {account.name[0]}
                                 </div>
                                 <button className="text-gray-400 hover:text-white transition-colors">
@@ -41,7 +41,7 @@ export default function AccountsPage() {
                                 {account.description}
                             </p>
 
-                            <div className="pt-4 border-t border-[var(--border-color)] flex items-center justify-between">
+                            <div className="pt-4 border-t border-border-custom flex items-center justify-between">
                                 <div className="flex items-center gap-2 text-sm text-gray-400">
                                     <Users size={16} />
                                     <span>{account.followers}</span>

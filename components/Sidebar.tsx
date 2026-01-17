@@ -2,15 +2,15 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { 
-  Inbox, 
-  Users, 
-  FileText, 
-  BarChart2, 
-  Briefcase, 
-  FilePieChart, 
-  Zap, 
-  Dumbbell, 
+import {
+  Inbox,
+  Users,
+  FileText,
+  BarChart2,
+  Briefcase,
+  FilePieChart,
+  Zap,
+  Dumbbell,
   Home,
   MessageSquare,
   Globe,
@@ -40,8 +40,8 @@ export function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <div className="w-[var(--sidebar-width)] h-screen border-r border-[var(--border-color)] bg-[var(--background)] flex flex-col fixed left-0 top-0 z-50">
-      <div className="h-16 flex items-center px-6 border-b border-[var(--border-color)]">
+    <div className="w-sidebar h-screen border-r border-border-custom bg-background flex flex-col fixed left-0 top-0 z-50">
+      <div className="h-16 flex items-center px-6 border-b border-border-custom">
         <div className="font-bold text-lg tracking-tight flex items-center gap-2">
           <span className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center text-white font-bold">ST</span>
           <span>Social Meok</span>
@@ -89,7 +89,7 @@ export function Sidebar() {
                 key={item.name}
                 className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-colors"
               >
-                <div className="w-5 h-5 rounded bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center text-[10px] text-white">
+                <div className="w-5 h-5 rounded bg-linear-to-br from-purple-500 to-blue-500 flex items-center justify-center text-[10px] text-white">
                   {item.name[0]}
                 </div>
                 <span>{item.name}</span>
@@ -98,15 +98,15 @@ export function Sidebar() {
           </div>
         </div>
       </div>
-      
-      <div className="p-4 border-t border-[var(--border-color)]">
-         <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 shadow-lg" />
-            <div className="flex flex-col">
-                <span className="text-sm font-medium text-white">Guest User</span>
-                <span className="text-xs text-gray-500">View Profile</span>
-            </div>
-         </div>
+
+      <div className="p-4 border-t border-border-custom">
+        <div className="flex items-center gap-3">
+          <div className="w-8 h-8 rounded-full bg-linear-to-r from-emerald-500 to-teal-500 shadow-lg" />
+          <div className="flex flex-col">
+            <span className="text-sm font-medium text-white">Guest User</span>
+            <span className="text-xs text-gray-500">View Profile</span>
+          </div>
+        </div>
       </div>
     </div>
   );

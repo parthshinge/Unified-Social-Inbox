@@ -9,7 +9,7 @@ interface MetricCardProps {
 
 export function MetricCard({ label, value, trend, isPositive = true }: MetricCardProps) {
     return (
-        <div className="glass-card p-4 rounded-xl flex flex-col gap-1 hover:bg-white/[0.05] transition-colors cursor-pointer group">
+        <div className="glass-card p-4 rounded-xl flex flex-col gap-1 hover:bg-white/5 transition-colors cursor-pointer group">
             <span className="text-gray-400 text-xs font-medium uppercase tracking-wider">{label}</span>
             <div className="flex items-end justify-between">
                 <span className="text-xl font-bold text-white tracking-tight">{value}</span>

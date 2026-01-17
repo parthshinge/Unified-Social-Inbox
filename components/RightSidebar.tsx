@@ -11,7 +11,7 @@ const clientAccounts = [
 
 export function RightSidebar() {
     return (
-        <div className="w-[300px] border-l border-[var(--border-color)] bg-[var(--background)] h-screen fixed right-0 top-0 pt-16 hidden xl:flex flex-col">
+        <div className="w-[300px] border-l border-border-custom bg-background h-screen fixed right-0 top-0 pt-16 hidden xl:flex flex-col">
             <div className="p-6 overflow-y-auto flex-1">
                 <div className="flex items-center justify-between mb-6">
                     <h3 className="font-semibold text-white">Client accounts</h3>
@@ -20,8 +20,8 @@ export function RightSidebar() {
 
                 <div className="space-y-4">
                     {clientAccounts.map((account) => (
-                        <div key={account.name} className="glass-card p-3 rounded-xl flex items-center gap-3 hover:bg-white/[0.05] transition-colors cursor-pointer ring-1 ring-white/5 hover:ring-blue-500/30">
-                            <div className={`w-10 h-10 rounded-lg bg-gradient-to-br ${account.color} flex items-center justify-center text-white font-bold text-sm shadow-inner`}>
+                        <div key={account.name} className="glass-card p-3 rounded-xl flex items-center gap-3 hover:bg-white/5 transition-colors cursor-pointer ring-1 ring-white/5 hover:ring-blue-500/30">
+                            <div className={`w-10 h-10 rounded-lg bg-linear-to-br ${account.color} flex items-center justify-center text-white font-bold text-sm shadow-inner`}>
                                 {account.name[0]}
                             </div>
                             <div className="flex-1 min-w-0">

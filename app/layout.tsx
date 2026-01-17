@@ -27,11 +27,11 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[var(--background)] text-[var(--foreground)]`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}
       >
         <Sidebar />
         <RightSidebar />
-        <main className="ml-[var(--sidebar-width)] xl:mr-[300px] min-h-screen">
+        <main className="ml-sidebar xl:mr-[300px] min-h-screen">
           {children}
         </main>
       </body>

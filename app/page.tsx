@@ -53,15 +53,15 @@ export default async function Home() {
             <button className="flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium transition-colors shadow-lg shadow-blue-900/20">
               Details
             </button>
-            <button className="flex items-center gap-2 px-4 py-2 rounded-lg bg-[var(--card-bg)] hover:bg-white/5 text-gray-300 text-sm font-medium transition-colors border border-[var(--border-color)]">
+            <button className="flex items-center gap-2 px-4 py-2 rounded-lg bg-card hover:bg-white/5 text-gray-300 text-sm font-medium transition-colors border border-border-custom">
               <Filter size={16} />
               Assign Interests
             </button>
-            <button className="flex items-center gap-2 px-4 py-2 rounded-lg bg-[var(--card-bg)] hover:bg-white/5 text-gray-300 text-sm font-medium transition-colors border border-[var(--border-color)]">
+            <button className="flex items-center gap-2 px-4 py-2 rounded-lg bg-card hover:bg-white/5 text-gray-300 text-sm font-medium transition-colors border border-border-custom">
               <BarChart size={16} />
               Analytics Basics
             </button>
-            <button className="flex items-center gap-2 px-4 py-2 rounded-lg bg-[var(--card-bg)] hover:bg-white/5 text-gray-300 text-sm font-medium transition-colors border border-[var(--border-color)]">
+            <button className="flex items-center gap-2 px-4 py-2 rounded-lg bg-card hover:bg-white/5 text-gray-300 text-sm font-medium transition-colors border border-border-custom">
               <SlidersHorizontal size={16} />
               Campaigns
             </button>

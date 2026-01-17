@@ -12,9 +12,9 @@ interface InboxCardProps {
 
 export function InboxCard({ platform, author, handle, content, time, status, avatarColor }: InboxCardProps) {
     return (
-        <div className="glass-card p-4 rounded-xl hover:bg-white/[0.05] transition-all cursor-pointer border border-[var(--border-color)] hover:border-blue-500/30 group">
+        <div className="glass-card p-4 rounded-xl hover:bg-white/5 transition-all cursor-pointer border border-border-custom hover:border-blue-500/30 group">
             <div className="flex items-start gap-4">
-                <div className={`w-10 h-10 rounded-full bg-gradient-to-br ${avatarColor} flex-shrink-0`} />
+                <div className={`w-10 h-10 rounded-full bg-linear-to-br ${avatarColor} shrink-0`} />
 
                 <div className="flex-1 min-w-0">
                     <div className="flex items-center justify-between mb-1">
@@ -24,8 +24,8 @@ export function InboxCard({ platform, author, handle, content, time, status, ava
                         </div>
                         <div className="flex items-center gap-2">
                             <span className={`text-[10px] px-2 py-0.5 rounded-full border ${status === 'Following' ? 'border-green-500/30 text-green-400 bg-green-500/10' :
-                                    status === 'Reply' ? 'border-blue-500/30 text-blue-400 bg-blue-500/10' :
-                                        'border-gray-700 text-gray-400'
+                                status === 'Reply' ? 'border-blue-500/30 text-blue-400 bg-blue-500/10' :
+                                    'border-gray-700 text-gray-400'
                                 }`}>
                                 {status}
                             </span>
