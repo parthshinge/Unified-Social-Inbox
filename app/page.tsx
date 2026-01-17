@@ -9,16 +9,10 @@ export default async function Home() {
   const metrics = await fetchMetrics();
   const inboxItems = await fetchInboxData();
 
-  // Helper to format time (simple approximation or use date-fns if installed)
+  // Helper to format time using date-fns
   const formatTime = (isoString: string) => {
     try {
-      const date = new Date(isoString);
-      const now = new Date();
-      const diffInHours = Math.abs(now.getTime() - date.getTime()) / 36e5;
-
-      if (diffInHours < 1) return "Just now";
-      if (diffInHours < 24) return `${Math.floor(diffInHours)} hours`;
-      return `${Math.floor(diffInHours / 24)} days`;
+      return formatDistanceToNow(new Date(isoString), { addSuffix: true });
     } catch (e) {
       return "recently";
     }
